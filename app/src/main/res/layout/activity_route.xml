@@ -1,0 +1,180 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="pl.swd.trasanazakupy.activities.RouteActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_man"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@mipmap/man" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_arrow1"
+        android:src="@mipmap/arrow1"
+        android:layout_alignTop="@+id/iv_man"
+        android:layout_toRightOf="@+id/iv_man"
+        android:layout_toEndOf="@+id/iv_man"
+        android:paddingTop="25dp"
+        android:layout_marginLeft="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CCC"
+        android:id="@+id/bt_bag1"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/iv_arrow1"
+        android:layout_toEndOf="@+id/iv_arrow1"
+        android:background="@mipmap/bag"
+        android:layout_marginLeft="10dp"
+        android:paddingLeft="7dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_arrow2"
+        android:src="@mipmap/arrow1"
+        android:paddingTop="25dp"
+        android:layout_alignTop="@+id/bt_bag1"
+        android:layout_toRightOf="@+id/bt_bag1"
+        android:layout_toEndOf="@+id/bt_bag1"
+        android:layout_marginLeft="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deichmann"
+        android:id="@+id/bt_bag2"
+        android:layout_alignTop="@+id/iv_arrow2"
+        android:layout_toRightOf="@+id/iv_arrow2"
+        android:layout_toEndOf="@+id/iv_arrow2"
+        android:background="@mipmap/bag"
+        android:layout_marginLeft="10dp"
+        android:paddingLeft="7dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_arrow3"
+        android:src="@mipmap/arrow4"
+        android:layout_below="@+id/iv_man"
+        android:layout_toRightOf="@+id/bt_bag2"
+        android:layout_toEndOf="@+id/bt_bag2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cropp"
+        android:id="@+id/bt_bag3"
+        android:layout_below="@+id/iv_arrow3"
+        android:layout_alignRight="@+id/bt_bag2"
+        android:layout_alignEnd="@+id/bt_bag2"
+        android:background="@mipmap/bag"
+        android:paddingLeft="7dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_arrow4"
+        android:layout_toLeftOf="@+id/bt_bag3"
+        android:src="@mipmap/arrow2"
+        android:layout_alignBottom="@+id/bt_bag3"
+        android:paddingBottom="30dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rossmann"
+        android:id="@+id/bt_bag4"
+        android:layout_alignTop="@+id/bt_bag3"
+        android:layout_toLeftOf="@+id/iv_arrow4"
+        android:layout_toStartOf="@+id/iv_arrow4"
+        android:background="@mipmap/bag"
+        android:paddingLeft="7dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_arrow5"
+        android:layout_alignBottom="@+id/bt_bag4"
+        android:layout_toLeftOf="@+id/bt_bag4"
+        android:layout_toStartOf="@+id/bt_bag4"
+        android:src="@mipmap/arrow3"
+        android:paddingBottom="40dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Intersport"
+        android:id="@+id/bt_bag5"
+        android:layout_toLeftOf="@+id/iv_arrow5"
+        android:layout_toStartOf="@+id/iv_arrow5"
+        android:layout_alignTop="@+id/bt_bag4"
+        android:background="@mipmap/bag"
+        android:layout_gravity="center"
+        android:paddingLeft="7dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="5 min"
+        android:id="@+id/tv_time5"
+        android:layout_above="@+id/iv_arrow5"
+        android:layout_alignLeft="@+id/iv_arrow5"
+        android:paddingLeft="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="3,5 min"
+        android:id="@+id/tv_time4"
+        android:layout_alignLeft="@+id/iv_arrow4"
+        android:layout_alignStart="@+id/bt_bag4"
+        android:layout_above="@+id/iv_arrow4"
+        android:paddingLeft="20dp"
+        android:paddingBottom="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="10 min"
+        android:id="@+id/tv_time3"
+        android:layout_alignTop="@+id/iv_arrow3"
+        android:layout_toLeftOf="@+id/iv_arrow3"
+        android:paddingTop="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="5,5 min"
+        android:id="@+id/tv_time2"
+        android:layout_alignLeft="@+id/iv_arrow2"
+        android:paddingLeft="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="6 min"
+        android:id="@+id/tv_time1"
+        android:layout_alignLeft="@+id/iv_arrow1"
+        android:paddingLeft="20dp" />
+
+</RelativeLayout>

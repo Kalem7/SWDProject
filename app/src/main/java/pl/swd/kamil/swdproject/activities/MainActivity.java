@@ -1,9 +1,11 @@
-package pl.swd.kamil.swdproject;
+package pl.swd.kamil.swdproject.activities;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import pl.swd.kamil.swdproject.R;
 
 
 public class MainActivity extends ActionBarActivity {

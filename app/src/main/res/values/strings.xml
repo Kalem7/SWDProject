@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">SWDProject</string>
+    <string name="app_name">Trasa na zakupy</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_localization">Wybór aktualnej lokalizacji</string>
+    <string name="title_activity_products">Wybór produktów</string>
+    <string name="title_activity_route">Proponowana trasa</string>
+    <string name="title_activity_shop_details">Informacje o sklepie</string>
 </resources>
