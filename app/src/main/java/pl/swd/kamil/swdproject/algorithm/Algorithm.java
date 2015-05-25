@@ -43,7 +43,7 @@ public class Algorithm {
         return shops;
     }
 
-    public void chooseRoute(ArrayList<String> products)
+    public Route chooseRoute(ArrayList<String> products)
     {
         addPlaces(products);
         ArrayList<Value> tempValues = new ArrayList<Value>();
@@ -85,5 +85,7 @@ public class Algorithm {
             route.add(Value.getDecisionFor(values.get(i), route.get(i)));
             System.out.println(Value.getDecisionFor(values.get(i), route.get(i)).name);
         }
+
+        return new Route(route);
     }
 }

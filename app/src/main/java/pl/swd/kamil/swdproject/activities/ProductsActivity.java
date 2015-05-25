@@ -14,12 +14,15 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
 import pl.swd.kamil.swdproject.R;
 import pl.swd.kamil.swdproject.algorithm.Algorithm;
+import pl.swd.kamil.swdproject.algorithm.Route;
 import pl.swd.kamil.swdproject.database.Data;
+import pl.swd.kamil.swdproject.database.Shop;
 
 public class ProductsActivity extends ActionBarActivity {
 
@@ -31,12 +34,11 @@ public class ProductsActivity extends ActionBarActivity {
 */
     public ArrayAdapter adapter;
     public ArrayAdapter selectedAdapter;
-    public ArrayList<String> selectedProducts;
+    public static ArrayList<String> selectedProducts;
     public ArrayList<String> products;
     Activity mContext;
     Button mNext;
 
-    public static String TAG_PLACES = "PLACES";
     public int localizationID;
 
     @Override
@@ -44,8 +46,7 @@ public class ProductsActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
         mContext = this;
-        Bundle extras;
-        extras = getIntent().getExtras();
+        Bundle extras = getIntent().getExtras();
         if (extras!=null) {
             localizationID = extras.getInt(LocalizationActivity.TAG_PLACE_ID);
         }
@@ -54,10 +55,17 @@ public class ProductsActivity extends ActionBarActivity {
         mNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Algorithm alg = new Algorithm(Data.shops.get(localizationID));
-                alg.chooseRoute(selectedProducts);
-                Intent intent = new Intent(mContext, RouteActivity.class);
-                startActivity(intent);
+                if (selectedProducts.size() < 1)
+                {
+                    Toast.makeText(mContext, "Musisz wybrać co najmniej jeden produkt!", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Algorithm alg = new Algorithm(Data.shops.get(localizationID));
+                    RouteActivity.route = alg.chooseRoute(selectedProducts);
+                    Intent intent = new Intent(mContext, RouteActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 

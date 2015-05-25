@@ -22,4 +22,17 @@ public class Product implements Serializable,Comparable<Product> {
         return this.name.compareTo(p.name);
     }
 
+    public static Product findProduct(String name)
+    {
+        for (Product p:Data.products)
+        {
+            if (p.name.equals(name))
+            {
+                return p;
+            }
+        }
+
+        return null;
+    }
+
 }

@@ -8,7 +8,7 @@ import java.util.HashMap;
  * Created by Paulina on 2015-05-24.
  */
 public class Shop implements Serializable,Comparable<Shop> {
-    private static final long serialVersionUID = -2497844329827947244L;
+    private static final long serialVersionUID = -8099732934509051005L;
     public String name;
     public int floor;
     public ArrayList<Product> products;
@@ -55,5 +55,18 @@ public class Shop implements Serializable,Comparable<Shop> {
     public int compareTo(Shop s)
     {
         return this.name.compareTo(s.name);
+    }
+
+    public static Shop findShop(String name)
+    {
+        for (Shop s:Data.shops)
+        {
+            if (s.name.equals(name))
+            {
+                return s;
+            }
+        }
+
+        return null;
     }
 }
