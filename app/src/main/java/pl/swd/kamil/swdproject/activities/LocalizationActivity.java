@@ -21,6 +21,7 @@ public class LocalizationActivity extends ActionBarActivity {
 
     public ArrayAdapter adapter;
     Activity mContext;
+    public static String TAG_PLACE_ID = "PLACE ID";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class LocalizationActivity extends ActionBarActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 Intent intent = new Intent(mContext.getApplicationContext(), ProductsActivity.class);
+                intent.putExtra(TAG_PLACE_ID, position);
                 startActivity(intent);
             }
         });

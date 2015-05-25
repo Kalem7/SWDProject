@@ -25,4 +25,16 @@ public class Shop implements Serializable {
     {
         products.add(p);
     }
+
+    public boolean isInShop(String product)
+    {
+        for (Product p:products)
+        {
+            if (p.name.equals(product))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }

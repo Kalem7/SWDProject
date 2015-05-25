@@ -31,11 +31,19 @@ public class ProductsActivity extends ActionBarActivity {
     Activity mContext;
     Button mNext;
 
+    public static String TAG_PLACES = "PLACES";
+    public int localizationID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
         mContext = this;
+        Bundle extras;
+        extras = getIntent().getExtras();
+        if (extras!=null) {
+            localizationID = extras.getInt(LocalizationActivity.TAG_PLACE_ID);
+        }
 
         mNext = (Button) findViewById(R.id.bt_next);
         mNext.setOnClickListener(new View.OnClickListener() {
