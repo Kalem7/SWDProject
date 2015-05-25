@@ -55,26 +55,35 @@ public class Algorithm {
                 tempValues.clear();
                 for (Shop s2: places.get(i))
                 {
-                    System.out.println("i:"+i + " s1:"+s.name+" s2:"+s2.name);
+
                     if (values.size() > 1)
                     {
                         tempValues.add(new Value(s, s2, s.getDistance(s2) + Value.getValueOf(values.get(1), s2)));
+                        System.out.println("i:" + i + " s1:" + s.name + " s2:" + s2.name+ " v: "+s.getDistance(s2)+"+"+Value.getValueOf(values.get(1),s2)+"="+(s.getDistance(s2)+Value.getValueOf(values.get(1), s2)));
                     }
                     else
                     {
                         tempValues.add(new Value(s, s2, s.getDistance(s2)));
+                        System.out.println("i:" + i + " s1:" + s.name + " s2:" + s2.name + " v: "+s.getDistance(s2));
                     }
                 }
 
                 values.get(0).add(Value.getMinValue(tempValues));
             }
 
-            /*
+
             for (Value v: values.get(0))
             {
                 System.out.println(v);
-            }*/
+            }
         }
-    System.out.println(values.size());
+
+        route.add(places.get(0).get(0));
+
+        for (int i = 0; i < values.size(); i++)
+        {
+            route.add(Value.getDecisionFor(values.get(i), route.get(i)));
+            System.out.println(Value.getDecisionFor(values.get(i), route.get(i)).name);
+        }
     }
 }

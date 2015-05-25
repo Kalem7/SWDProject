@@ -7,7 +7,7 @@ import java.util.HashMap;
 /**
  * Created by Paulina on 2015-05-24.
  */
-public class Shop implements Serializable {
+public class Shop implements Serializable,Comparable<Shop> {
     private static final long serialVersionUID = -2497844329827947244L;
     public String name;
     public int floor;
@@ -27,7 +27,7 @@ public class Shop implements Serializable {
 
     public void addShop(Shop s, int time)
     {
-        distances.put(s,time);
+        distances.put(s, time);
     }
 
     public void addProduct(Product p)
@@ -50,5 +50,10 @@ public class Shop implements Serializable {
     public int getDistance(Shop s)
     {
         return distances.get(s);
+    }
+
+    public int compareTo(Shop s)
+    {
+        return this.name.compareTo(s.name);
     }
 }

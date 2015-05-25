@@ -47,8 +47,21 @@ public class Value {
         return -1;
     }
 
+    public static Shop getDecisionFor(ArrayList<Value> values, Shop x)
+    {
+        for (Value val: values)
+        {
+            if (val.x == x)
+            {
+                return val.u;
+            }
+        }
+
+        return null;
+    }
+
     public String toString()
     {
-        return "x = "+x+", u = "+u+", v = "+v;
+        return "x = "+x.name+", u = "+u.name+", v = "+v;
     }
 }

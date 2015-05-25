@@ -1,6 +1,7 @@
 package pl.swd.kamil.swdproject.database;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import pl.swd.kamil.swdproject.R;
 
@@ -54,7 +55,7 @@ public class Data {
         products.add(new Product("Mysz", categories.get(5)));                   // 27
         products.add(new Product("Klawiatura", categories.get(5)));             // 28
         products.add(new Product("Monitor", categories.get(5)));                // 29
-        products.add(new Product("Komputer PC", categories.get(5)));                 // 30
+        products.add(new Product("Komputer PC", categories.get(5)));            // 30
         products.add(new Product("Tablet", categories.get(5)));                 // 31
         products.add(new Product("Aparat fotograficzny", categories.get(5)));   // 32
         products.add(new Product("Garnek", categories.get(5)));                 // 33
@@ -65,43 +66,43 @@ public class Data {
         products.add(new Product("Ręcznik", categories.get(5)));               // 38
 
         shops = new ArrayList<Shop>();
-        shops.add(new Shop("Duka", 0, R.mipmap.deichmann1));                // 0
-        shops.add(new Shop("Home&You",1, R.mipmap.deichmann1));             // 1
-        shops.add(new Shop("X-KOM",-1, R.mipmap.deichmann1));               // 2
-        shops.add(new Shop("Saturn",1, R.mipmap.deichmann1));               // 3
-        shops.add(new Shop("Empik",0, R.mipmap.deichmann1));                // 4
-        shops.add(new Shop("Matras",0, R.mipmap.deichmann1));               // 5
-        shops.add(new Shop("Sony Center",1, R.mipmap.deichmann1));               // 6
-        shops.add(new Shop("Deichmann",-1, R.mipmap.deichmann1));           // 7
-        shops.add(new Shop("CCC",-1, R.mipmap.deichmann1));                 // 8
-        shops.add(new Shop("Heavy Duty",-1, R.mipmap.deichmann1));          // 9
-        shops.add(new Shop("McArthur",1, R.mipmap.deichmann1));             // 10
-        shops.add(new Shop("Kazar",1, R.mipmap.deichmann1));                // 11
-        shops.add(new Shop("Kari",1, R.mipmap.deichmann1));               // 12
-        shops.add(new Shop("Atlantic",1, R.mipmap.deichmann1));             // 13
-        shops.add(new Shop("Bershka",1, R.mipmap.deichmann1));              // 14
-        shops.add(new Shop("Carry",1, R.mipmap.deichmann1));                // 15
-        shops.add(new Shop("Cropp Town",1, R.mipmap.deichmann1));           // 16
-        shops.add(new Shop("Diverse",1, R.mipmap.deichmann1));              // 17
-        shops.add(new Shop("Calzedonia",1, R.mipmap.deichmann1));           // 18
-        shops.add(new Shop("House",1, R.mipmap.deichmann1));                // 19
-        shops.add(new Shop("New Yorker",1, R.mipmap.deichmann1));           // 20
-        shops.add(new Shop("Lavard",1, R.mipmap.deichmann1));               // 21
-        shops.add(new Shop("Rossmann",1, R.mipmap.deichmann1));              // 22
-        shops.add(new Shop("Wólczanka", 1, R.mipmap.deichmann1));            // 23
-        shops.add(new Shop("Inglot", 1, R.mipmap.deichmann1));               // 24
-        shops.add(new Shop("Sephora", 1, R.mipmap.deichmann1));              // 25
-        shops.add(new Shop("Douglas", 1, R.mipmap.deichmann1));              // 26
-        shops.add(new Shop("Yves Rocher", 1, R.mipmap.deichmann1));          // 27
-        shops.add(new Shop("Apart", 1, R.mipmap.deichmann1));                // 28
-        shops.add(new Shop("W.KRUK", 1, R.mipmap.deichmann1));               // 29
-        shops.add(new Shop("YES", 1, R.mipmap.deichmann1));                  // 30
-        shops.add(new Shop("I am", 1, R.mipmap.deichmann1));                 // 31
-        shops.add(new Shop("Briju", 1, R.mipmap.deichmann1));                // 32
+        shops.add(new Shop("Duka", 0, R.mipmap.duka));                          // 0
+        shops.add(new Shop("Home&You",1, R.mipmap.hy));                         // 1
+        shops.add(new Shop("X-KOM",-1, R.mipmap.x_kom));                        // 2
+        shops.add(new Shop("Saturn",1, R.mipmap.saturn));                       // 3
+        shops.add(new Shop("Empik",0, R.mipmap.empik));                         // 4
+        shops.add(new Shop("Matras",0, R.mipmap.matras));                       // 5
+        shops.add(new Shop("Sony Center",1, R.mipmap.sony));                    // 6
+        shops.add(new Shop("Deichmann",-1, R.mipmap.deichmann1));               // 7
+        shops.add(new Shop("CCC",-1, R.mipmap.ccc));                            // 8
+        shops.add(new Shop("Heavy Duty",-1, R.mipmap.hd_1));                    // 9
+        shops.add(new Shop("McArthur",1, R.mipmap.mc_arthur));                  // 10
+        shops.add(new Shop("Kazar",0, R.mipmap.kazar));                         // 11
+        shops.add(new Shop("Kari",-1, R.mipmap.kari));                          // 12
+        shops.add(new Shop("Atlantic",1, R.mipmap.atlantic));                   // 13
+        shops.add(new Shop("Bershka",0, R.mipmap.bershka));                     // 14
+        shops.add(new Shop("Carry",1, R.mipmap.carry));                         // 15
+        shops.add(new Shop("Cropp Town",-1, R.mipmap.cropp));                   // 16
+        shops.add(new Shop("Diverse",1, R.mipmap.diverse));                     // 17
+        shops.add(new Shop("Calzedonia",0, R.mipmap.calzedonia));               // 18
+        shops.add(new Shop("House",-1, R.mipmap.house));                        // 19
+        shops.add(new Shop("New Yorker",1, R.mipmap.new_yorker));               // 20
+        shops.add(new Shop("Lavard",0, R.mipmap.lavard));                       // 21
+        shops.add(new Shop("Rossmann",-1, R.mipmap.rossmann));                  // 22
+        shops.add(new Shop("Wólczanka", 0, R.mipmap.wolczanka));                // 23
+        shops.add(new Shop("Inglot", -1, R.mipmap.inglot));                     // 24
+        shops.add(new Shop("Sephora", 0, R.mipmap.sephora));                    // 25
+        shops.add(new Shop("Douglas", 0, R.mipmap.douglas));                    // 26
+        shops.add(new Shop("Yves Rocher", 0, R.mipmap.yves_rocher));            // 27
+        shops.add(new Shop("Apart", 1, R.mipmap.apart));                        // 28
+        shops.add(new Shop("W.KRUK", 1, R.mipmap.kruk));                        // 29
+        shops.add(new Shop("YES", 0, R.mipmap.yes));                            // 30
+        shops.add(new Shop("I am", 0, R.mipmap.i_am));                          // 31
+        shops.add(new Shop("Briju", 0, R.mipmap.briju));                        // 32
 
-        shops.add(new Shop("Wejście główne", 1, R.mipmap.deichmann1));              // 33
-        shops.add(new Shop("Wejście poziom -1", 1, R.mipmap.deichmann1));           // 34
-        shops.add(new Shop("Wejście od ul. Słowiańskiej", 1, R.mipmap.deichmann1)); // 35
+        shops.add(new Shop("Wejście główne", 1, -1));                           // 33
+        shops.add(new Shop("Wejście poziom -1", 1, -1));                        // 34
+        shops.add(new Shop("Wejście od ul. Słowiańskiej", 1, -1));              // 35
 
 
 
@@ -945,5 +946,33 @@ public class Data {
             d.shop1.addShop(d.shop2, d.time);
             d.shop2.addShop(d.shop1, d.time);
         }
+    }
+
+    public static ArrayList<String> getAllShopNames()
+    {
+        ArrayList<String> names = new ArrayList<String>();
+
+        for (Shop s:shops)
+        {
+            names.add(s.name);
+        }
+
+        Collections.sort(names);
+
+        return names;
+    }
+
+    public static ArrayList<String> getAllProductNames()
+    {
+        ArrayList<String> names = new ArrayList<String>();
+
+        for (Product p:products)
+        {
+            names.add(p.name);
+        }
+
+        Collections.sort(names);
+
+        return names;
     }
 }

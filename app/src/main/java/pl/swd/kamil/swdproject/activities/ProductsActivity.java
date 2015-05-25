@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import pl.swd.kamil.swdproject.R;
 import pl.swd.kamil.swdproject.algorithm.Algorithm;
@@ -31,6 +32,7 @@ public class ProductsActivity extends ActionBarActivity {
     public ArrayAdapter adapter;
     public ArrayAdapter selectedAdapter;
     public ArrayList<String> selectedProducts;
+    public ArrayList<String> products;
     Activity mContext;
     Button mNext;
 
@@ -52,7 +54,6 @@ public class ProductsActivity extends ActionBarActivity {
         mNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Data.addData();
                 Algorithm alg = new Algorithm(Data.shops.get(localizationID));
                 alg.chooseRoute(selectedProducts);
                 Intent intent = new Intent(mContext, RouteActivity.class);
@@ -60,14 +61,15 @@ public class ProductsActivity extends ActionBarActivity {
             }
         });
 
-        final ArrayList<String> products = new ArrayList<String>();
+       /* final ArrayList<String> products = new ArrayList<String>();
         products.add("Bluza");
         products.add("Buty sportowe");
         products.add("Koszulka");
         products.add("Torebka");
         products.add("Skarpety");
         products.add("Spodnie");
-        products.add("Perfumy");
+        products.add("Perfumy");*/
+        products = Data.getAllProductNames();
         selectedProducts = new ArrayList<String>();
 
         adapter= new ArrayAdapter<String>(this, R.layout.list_item, products);
@@ -100,6 +102,7 @@ public class ProductsActivity extends ActionBarActivity {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 String selectedProduct = (String) parent.getItemAtPosition(position);
                 products.add(selectedProduct);
+                Collections.sort(products);
                 selectedProducts.remove(selectedProduct);
                 selectedAdapter.notifyDataSetChanged();
                 adapter.notifyDataSetChanged();

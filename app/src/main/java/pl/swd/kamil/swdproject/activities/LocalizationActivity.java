@@ -16,6 +16,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import pl.swd.kamil.swdproject.R;
+import pl.swd.kamil.swdproject.database.Data;
 
 public class LocalizationActivity extends ActionBarActivity {
 
@@ -30,7 +31,10 @@ public class LocalizationActivity extends ActionBarActivity {
         setTitle(R.string.title_activity_localization);
         mContext = this;
 
-        String[] localizations = new String[] { "Wejście główne", "Wejście poziom -1", "Wejście od ul. Słowiańskiej", "Deichmann" , "House"};
+        Data.addData();
+
+        //String[] localizations = new String[] { "Wejście główne", "Wejście poziom -1", "Wejście od ul. Słowiańskiej", "Deichmann" , "House"};
+        ArrayList<String> localizations = Data.getAllShopNames();
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, localizations);
         final ListView list = (ListView) findViewById(R.id.availableLocalization);
