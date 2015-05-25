@@ -17,6 +17,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import pl.swd.kamil.swdproject.R;
+import pl.swd.kamil.swdproject.algorithm.Algorithm;
+import pl.swd.kamil.swdproject.database.Data;
 
 public class ProductsActivity extends ActionBarActivity {
 
@@ -28,6 +30,7 @@ public class ProductsActivity extends ActionBarActivity {
 */
     public ArrayAdapter adapter;
     public ArrayAdapter selectedAdapter;
+    public ArrayList<String> selectedProducts;
     Activity mContext;
     Button mNext;
 
@@ -49,6 +52,9 @@ public class ProductsActivity extends ActionBarActivity {
         mNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Data.addData();
+                Algorithm alg = new Algorithm(Data.shops.get(localizationID));
+                alg.chooseRoute(selectedProducts);
                 Intent intent = new Intent(mContext, RouteActivity.class);
                 startActivity(intent);
             }
@@ -58,11 +64,11 @@ public class ProductsActivity extends ActionBarActivity {
         products.add("Bluza");
         products.add("Buty sportowe");
         products.add("Koszulka");
-        products.add("Kurtka");
+        products.add("Torebka");
         products.add("Skarpety");
         products.add("Spodnie");
-        products.add("Torebka");
-        final ArrayList<String> selectedProducts = new ArrayList<String>();
+        products.add("Perfumy");
+        selectedProducts = new ArrayList<String>();
 
         adapter= new ArrayAdapter<String>(this, R.layout.list_item, products);
         selectedAdapter= new ArrayAdapter<String>(this, R.layout.list_item, selectedProducts);

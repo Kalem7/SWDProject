@@ -17,4 +17,15 @@ public class Distance implements Serializable {
         shop2 = s2;
         time = t;
     }
+
+    public static int getTimeBetweenShops(Shop s1, Shop s2)
+    {
+        for (Distance d: Data.distances)
+        {
+            if ((d.shop1 == s1 && d.shop2 == s2) || (d.shop2 == s1 && d.shop1 == s2))
+                return d.time;
+        }
+
+        return -1;
+    }
 }

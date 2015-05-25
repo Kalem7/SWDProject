@@ -103,7 +103,6 @@ public class Data {
         shops.add(new Shop("Wejście poziom -1", 1, R.mipmap.deichmann1));           // 34
         shops.add(new Shop("Wejście od ul. Słowiańskiej", 1, R.mipmap.deichmann1)); // 35
 
-        distances.add(new Distance(shops.get(0), shops.get(1), 5));
 
 
         //duka
@@ -308,6 +307,7 @@ public class Data {
         shops.get(32).addProduct(products.get(15));
         shops.get(32).addProduct(products.get(16));
 
+        distances = new ArrayList<Distance>();
         distances.add(new Distance(shops.get(0), shops.get(1), 254));
         distances.add(new Distance(shops.get(0), shops.get(2), 13));
         distances.add(new Distance(shops.get(0), shops.get(3), 262));
@@ -939,9 +939,11 @@ public class Data {
         distances.add(new Distance(shops.get(33), shops.get(35), 228));
         distances.add(new Distance(shops.get(34), shops.get(35), 172));
 
-        for(int i = 0; i < 36; i++)
+
+        for(Distance d:distances)
         {
-            distances.add(new Distance(shops.get(i), shops.get(i), 0));
+            d.shop1.addShop(d.shop2, d.time);
+            d.shop2.addShop(d.shop1, d.time);
         }
     }
 }
