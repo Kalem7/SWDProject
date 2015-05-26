@@ -85,10 +85,10 @@ public class Data {
         shops.add(new Shop("Cropp Town",-1, R.mipmap.cropp));                   // 16
         shops.add(new Shop("Diverse",1, R.mipmap.diverse));                     // 17
         shops.add(new Shop("Calzedonia",0, R.mipmap.calzedonia));               // 18
-        shops.add(new Shop("House",-1, R.mipmap.house));                        // 19
-        shops.add(new Shop("New Yorker",1, R.mipmap.new_yorker));               // 20
-        shops.add(new Shop("Lavard",0, R.mipmap.lavard));                       // 21
-        shops.add(new Shop("Rossmann",-1, R.mipmap.rossmann));                  // 22
+        shops.add(new Shop("House", -1, R.mipmap.house));                        // 19
+        shops.add(new Shop("New Yorker", 1, R.mipmap.new_yorker));               // 20
+        shops.add(new Shop("Lavard", 0, R.mipmap.lavard));                       // 21
+        shops.add(new Shop("Rossmann", -1, R.mipmap.rossmann));                  // 22
         shops.add(new Shop("Wólczanka", 0, R.mipmap.wolczanka));                // 23
         shops.add(new Shop("Inglot", -1, R.mipmap.inglot));                     // 24
         shops.add(new Shop("Sephora", 0, R.mipmap.sephora));                    // 25
@@ -153,7 +153,8 @@ public class Data {
         shops.get(7).addProduct(products.get(11));
         shops.get(7).addProduct(products.get(12));
         shops.get(7).addProduct(products.get(7));
-        shops.get(8).addProduct(products.get(13));
+        shops.get(7).addProduct(products.get(13));
+        shops.get(7).addProduct(products.get(18));
 
         //ccc
         shops.get(8).addProduct(products.get(10));
@@ -210,6 +211,7 @@ public class Data {
         shops.get(16).addProduct(products.get(4));
         shops.get(16).addProduct(products.get(5));
         shops.get(16).addProduct(products.get(6));
+        shops.get(16).addProduct(products.get(18));
 
         //diverse
         shops.get(17).addProduct(products.get(0));
@@ -232,6 +234,7 @@ public class Data {
         shops.get(19).addProduct(products.get(4));
         shops.get(19).addProduct(products.get(5));
         shops.get(19).addProduct(products.get(6));
+        shops.get(19).addProduct(products.get(18));
 
         //new yorker
         shops.get(20).addProduct(products.get(0));
