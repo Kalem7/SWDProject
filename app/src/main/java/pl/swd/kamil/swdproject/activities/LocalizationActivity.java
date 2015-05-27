@@ -23,6 +23,7 @@ public class LocalizationActivity extends ActionBarActivity {
     public ArrayAdapter adapter;
     Activity mContext;
     public static String TAG_PLACE_ID = "PLACE ID";
+    public ArrayList<String> localizations;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class LocalizationActivity extends ActionBarActivity {
         Data.addData();
 
         //String[] localizations = new String[] { "Wejście główne", "Wejście poziom -1", "Wejście od ul. Słowiańskiej", "Deichmann" , "House"};
-        ArrayList<String> localizations = Data.getAllShopNames();
+        localizations = Data.getAllShopNames();
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, localizations);
         final ListView list = (ListView) findViewById(R.id.availableLocalization);
@@ -43,7 +44,7 @@ public class LocalizationActivity extends ActionBarActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 Intent intent = new Intent(mContext.getApplicationContext(), ProductsActivity.class);
-                intent.putExtra(TAG_PLACE_ID, position);
+                intent.putExtra(TAG_PLACE_ID, localizations.get(position));
                 startActivity(intent);
             }
         });

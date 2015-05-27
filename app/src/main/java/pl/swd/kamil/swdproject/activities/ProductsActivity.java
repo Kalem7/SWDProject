@@ -39,7 +39,7 @@ public class ProductsActivity extends ActionBarActivity {
     Activity mContext;
     Button mNext;
 
-    public int localizationID;
+    public String localizationName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,7 @@ public class ProductsActivity extends ActionBarActivity {
         mContext = this;
         Bundle extras = getIntent().getExtras();
         if (extras!=null) {
-            localizationID = extras.getInt(LocalizationActivity.TAG_PLACE_ID);
+            localizationName = extras.getString(LocalizationActivity.TAG_PLACE_ID);
         }
 
         mNext = (Button) findViewById(R.id.bt_next);
@@ -61,7 +61,7 @@ public class ProductsActivity extends ActionBarActivity {
                 }
                 else
                 {
-                    Algorithm alg = new Algorithm(Data.shops.get(localizationID));
+                    Algorithm alg = new Algorithm(Shop.findShop(localizationName));
                     RouteActivity.route = alg.chooseRoute(selectedProducts);
                     Intent intent = new Intent(mContext, RouteActivity.class);
                     startActivity(intent);
