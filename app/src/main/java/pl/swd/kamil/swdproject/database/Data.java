@@ -378,9 +378,9 @@ public class Data {
         distances.add(new Distance(shops.get(1), shops.get(30), 120));//
         distances.add(new Distance(shops.get(1), shops.get(31), 60));//
         distances.add(new Distance(shops.get(1), shops.get(32), 55));//
-        distances.add(new Distance(shops.get(1), shops.get(60), 95));//
-        distances.add(new Distance(shops.get(1), shops.get(90), 114));//
-        distances.add(new Distance(shops.get(1), shops.get(45), 151));//
+        distances.add(new Distance(shops.get(1), shops.get(33), 95));//
+        distances.add(new Distance(shops.get(1), shops.get(34), 114));//
+        distances.add(new Distance(shops.get(1), shops.get(35), 151));//
         distances.add(new Distance(shops.get(2), shops.get(3), 100));//
         distances.add(new Distance(shops.get(2), shops.get(4), 85));//
         distances.add(new Distance(shops.get(2), shops.get(5), 46));//

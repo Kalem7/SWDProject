@@ -179,12 +179,22 @@ public class RouteActivity extends ActionBarActivity {
 
     public void fillView()
     {
+        int distance;
         if (route != null)
         {
             for (int i = 1; i < route.getLength(); i++)
             {
                 bags[i-1].setText(route.shops.get(i).name);
-                times[i-1].setText(route.shops.get(i-1).getDistance(route.shops.get(i))+ " s");
+                distance = route.shops.get(i-1).getDistance(route.shops.get(i));
+                if (distance/60 >0)
+                {
+                    times[i-1].setText(distance/60+" min "+distance%60 +" s");
+                }
+                else
+                {
+                    times[i-1].setText(route.shops.get(i-1).getDistance(route.shops.get(i))+ " s");
+                }
+
             }
         }
     }
